@@ -81,11 +81,11 @@
         },
         "flask-dropzone": {
             "hashes": [
-                "sha256:1860c7cc07f38a2ef9a5e29cd217638c6efec5665a6b319aa9e1fc3b992d6125",
-                "sha256:6c685bcf889ff7bb289de1cb7347aa87128e4daaec79820472ac4bf0a4058a1a"
+                "sha256:e5e3d4740d407807aa99d7b6438aad812a1ce01e1b07b0f409462ff078386709",
+                "sha256:fddeb963aef31da81e7bc39cad740e8778a8c59d96ef76c7d5ed362fc626a73a"
             ],
             "index": "pypi",
-            "version": "==1.5.3"
+            "version": "==1.5.4"
         },
         "flask-mail": {
             "hashes": [

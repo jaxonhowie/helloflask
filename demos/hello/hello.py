@@ -6,9 +6,15 @@
     :license: MIT, see LICENSE for more details.
 """
 import click
-from flask import Flask
+from flask import Flask, url_for
 
 app = Flask(__name__)
+
+app.config['ADMIN_NAME'] = 'Jaxon'
+app.config.update(
+    TESTING=True,
+    SECRTET_KEU=''
+)
 
 
 # the minimal Flask application
@@ -25,10 +31,18 @@ def say_hello():
 
 
 # dynamic route, URL variable default
+# @app.route(url_for('greet', name='jack'))
 @app.route('/greet', defaults={'name': 'Programmer'})
 @app.route('/greet/<name>')
 def greet(name):
     return '<h1>Hello, %s!</h1>' % name
+
+
+# @app.route(url_for('func', content='jack'))
+@app.route('/say', defaults={'content': 'hi'})
+@app.route('/say/<content>')
+def func(content):
+    return '<h1>I want to say %s to you!</h1>' % content
 
 
 # custom flask cli command
@@ -36,3 +50,10 @@ def greet(name):
 def hello():
     """Just say hello."""
     click.echo('Hello, Human!')
+    click.echo('hello hello,no problem')
+
+
+@app.cli.command()
+def custom_cmd():
+    """A custom command written by Jaxon Howie"""
+    click.echo('This is a custom command')
